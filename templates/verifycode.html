@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block activelog %}activelog{% endblock activelog %}
+{% block title %}Login | {% endblock %}
+{% block head%}
+
+<link rel="stylesheet" href="/static/css/signup.css">
+<link rel="stylesheet" href="/static/css/login.css">
+<script>
+    function validateForm() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match\n");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+<!-- -------login form box------------ -->
+
+<div class="signup-box">
+    <form action="/verify/verifycode/" method="post" >
+        {% csrf_token %}
+        <div class="top">
+            <h2>verify-code</h2>
+        </div>
+        <div class="form-box">
+            <input type="hidden" id="username" name="username" value="{{userverify}}">
+            <input type="hidden" id="vercode" name="vercode" value="{{vercode}}">
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="verification code" id="verification" name="vericode" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="verifycode" required>
+            </div>
+            <div class="thirdcol">
+                <span>Don't get verification code? <a href="/verify/">Re-send</a></span>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock body %}

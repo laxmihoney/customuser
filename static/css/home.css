@@ -1,0 +1,55 @@
+.home-main-unregistered{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex: 1;
+    min-height: 80vh;
+    
+}
+.home-left-unregistered{
+    padding: 1em 0 2em 0 ;
+    margin: 1%;
+    flex: 2.5 2.5 100px;
+    display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.home-left-unregistered img{
+    height: 330px;
+    width: 330px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+.home-main-unregistered main{
+    padding: 1em 0 2em 0;
+    margin: 1%;
+    flex: 5 5 150px;
+
+}
+.ytvideo{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+
+@media all and (max-width: 700px) {
+    .home-main-unregistered{
+        flex-direction: column;
+    }
+    .home-main-unregistered main{
+        
+    }
+    
+}
+
+.home{
+    width: 100%;
+}
+.homesecond{
+    width: 100%;
+    min-height: 100vh;
+}

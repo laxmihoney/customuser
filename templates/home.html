@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Home | {% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/home.css">
+{% endblock head %}
+{% block classactiveh %}active{% endblock classactiveh %}
+
+
+{% block body %}
+{% if user.is_authenticated %}
+
+{% else %}
+<div class="home">
+    <div class="home-main-unregistered">
+        <aside class="home-left-unregistered">
+            <h2>Why Laxmi Honey?</h2>
+            <img src="/static/images/logo.png" alt="oops! somthing went wrong">
+            <ul>
+                <li>15+ Years of experience in field of Bee Keeping.</li>
+                <li>100% Natural Raw honey.</li>
+                <li>Fast delivery inside Kathmandu valley.</li>
+                <li>Well known for both raw and purified Honey.</li>
+                <li>Heavy contribution for infulencing Women Empowerment.</li>
+                <li>Well skilled and fulley trained.</li>
+            </ul>
+        </aside>
+        <main>
+            <div class="ytvideo">
+                <a href="https://www.youtube.com/channel/UCJRpMfy9JBjUOE5GwYoX_tQ" target="_blank"> <video muted autoplay loop width="100%" height="100%" src="/static/videos/introvideo.mp4"></video></a>
+                
+            </div>
+        </main>
+    </div>
+    <div class="homesecond-unregistered">
+
+        <h2>Nothing to show please <a href="/login/">login</a> first!!!</h2>
+        <p>Login Now to place your first product from us</p>
+    </div>
+</div>
+
+{% endif %}
+{% endblock body %}

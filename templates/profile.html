@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{% if user.is_authenticated %}{{user.first_name}} | {% endif %}{% endblock title %}
+{% block activelog %}activelog{% endblock activelog %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/profile.css">
+{% endblock head %}
+{% block body %}
+
+<a href="/logout/">Logout</a>
+<img src="{{user.profile_picture.url}}" alt="something went wrong">
+
+{% endblock body %} 

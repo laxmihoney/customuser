@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}{% endblock head %}
+    <link rel="icon" href="/static/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock title %}Laxmi Bee Keeping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/92608aa66e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper">
+    <header class="header">
+        <div class="nav-logo">
+            <a href="/" class="navimg"><img class='navimgimg' src="/static/images/logo.png"></a>
+        </div>
+        <div class="nav-menu" id="NavMenu">
+            <ul class="navigation">
+                <li><a href="/" class="link {% block classactiveh %}{% endblock classactiveh %}">Home</a></li>
+                <li><a href="/products/" class="link {% block classactivep %}{% endblock classactivep %}" >Products</a></li>
+                <li><a href="/services/" class="link {% block classactives %}{% endblock classactives %}" >Services</a></li>
+                <li><a href="/about/"class="link {% block classactivea %}{% endblock classactivea %}" >About</a></li>
+            </ul>
+        </div>
+        <div class="login-menu-btn">
+        <div class="nav-login-button">
+            <button class="btn {% block activelog %}{% endblock activelog %}" id="activelog"><a href="{% if user.is_authenticated%}/profile/{%else%}/login/{% endif %}">{% if user.is_authenticated%} {{user.first_name}}  <img src="{{user.profile_picture.url}}" alt="" class="nav-profile-img">{%else%}Login <i class="fa-regular fa-circle-user"></i>{% endif %}  </a></button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="fa-solid fa-bars" onclick="myMenuFunction()"></i>
+        </div>
+    </div>
+    </header>
+    </div>
+    <div class="body1">
+    {% if messages %}
+        <div class="messages" id="message-container">
+            {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                <span>{{ message }}</span>
+                <button class="close-btn" onclick="this.parentElement.style.display='none';">&times;</button>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% block body %}
+    {% endblock body %}
+    </div>
+    <footer>
+        <ul class="social">
+            <li><a href="https://www.facebook.com/profile.php?id=100026010517058" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.youtube.com/@LaxmiHoneyIndustries" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/laxmihoneyindustry/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="mailto:laxmihoneyindustry@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+            </li>
+        </ul>
+        <ul class="footmenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/service/">services</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <p>&copy;2023 LaxmiBeeKeeping | All Rights Reserved.</p>
+        <p>Developer: Biplov Gautam</p>
+    </footer>
+
+
+<script>
+    function myMenuFunction() {
+    var i = document.getElementById ("NavMenu");
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+}
+    else {
+        i.className ="nav-menu";
+}
+}
+</script>
+</body>
+
+</html>

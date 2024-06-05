@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=poppins:wght@200;300;400;500;600;700;800;900& display=swap');
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    margin-top: 60px;
+    position: relative;
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+    margin-top: 60px;
+    position: relative;
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    position: relative;
+    background-color: rgba(130, 130, 0, 0.89);
+    width: 8px;
+    border-radius: 10px;
+    left: 0;
+    position: relative;
+    cursor: pointer;
+    /* border: 2px solid #fff; */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #d6d600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 99vw;
+    min-height: 100vh;
+    background: linear-gradient(to bottom left, #708090 60%, #FFBF00 35%);
+    background-repeat: no-repeat;
+    overflow: overlay;
+    /* background: url('/static/images/SAM_1386.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: overlay; */
+
+}
+
+
+.wrapper {
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15vh;
+    z-index: 1;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), transparent);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.775);
+}
+
+.navimg {
+    margin-top: 10px;
+    display: flex;
+    left: 0;
+    width: 80px;
+    height: 80px;
+}
+
+.navimgimg {
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(184, 196, 75));
+    transition: 0.3s ease-in-out;
+}
+
+.navimg:hover {
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(118, 126, 41));
+    transition: 0.3s ease;
+}
+
+.nav-menu ul {
+
+    display: flex;
+}
+
+.nav-menu ul li {
+    list-style: none;
+}
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #FFBF00;
+    padding-bottom: 10px;
+    margin: 0 25px;
+}
+
+.nav-menu ul li .link:hover {
+    transition: 0.3s ease;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+.link:hover,
+.active {
+    border-bottom: 2px solid #FFBF00;
+}
+
+
+
+.nav-login-button .btn {
+    width: 120px;
+    height: 40px;
+    font-weight: 500;
+    background: transparent;
+    border: 3px solid #FFBF00;
+    border-radius: 30px;
+    color: #FFBF00;
+
+    transition: 0.3s ease;
+
+}
+
+.nav-login-button .btn:hover {
+    background: rgba(0, 0, 0, 0.492);
+    transition: 0.3s ease;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    width: 125px;
+    height: 45px;
+}
+
+
+.activelog {
+    background: rgba(0, 0, 0, 0.492);
+    transition: 0.3s ease;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    width: 125px;
+    height: 45px;
+}
+
+.nav-login-button .btn a {
+    padding: 0 0 0 5px;
+    text-decoration: none;
+    color: #FFBF00;
+}
+.nav-login-button .btn a i{
+    padding: 0 0 0 5px;
+    font-size: large;
+}
+
+
+
+.nav-menu-btn {
+    display: none;
+    padding-top: 5px;
+}
+.nav-menu-btn i{
+    color: #708090;
+    font-size: larger;
+    font-size: 30px;
+    cursor: pointer;
+    text-shadow: 0 0 10px black;
+}
+
+.nav-profile-img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+    transform: translateY(5px);
+}
+
+
+
+/* Add this CSS to your base.css or any other CSS file */
+
+.messages {
+    position: fixed;
+    top: 60px;
+
+    width: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #FFBF00;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.833);
+    border-left: 6px solid;
+    border-radius: 5px;
+    position: relative;
+    animation: fadeOut 6s ease forwards;
+}
+
+.message .close-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+/* responsive  */
+
+
+
+.body1 {
+    min-height: 100vh;
+    width: 100%;
+    padding: 1% 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0.9;
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    position: relative;
+    top: 100%;
+    bottom: 0%;
+    width: 100%;
+    min-height: 100px;
+    background-image: linear-gradient(transparent, transparent);
+    padding: 20px 50px;
+    flex-direction: column;
+    overflow: overlay;
+    padding-top: 50px;
+}
+
+footer .social,
+.footmenu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+footer .social li,
+footer .footmenu li {
+    list-style: none;
+}
+
+footer .social li a {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: #000;
+    display: inline-block;
+
+    transition: 0.5s;
+}
+
+footer .footmenu li a {
+    font-size: 1em;
+    margin: 0 10px;
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+    opacity: o.75;
+    transition: 0.3s;
+}
+
+footer .footmenu li a:hover {
+    color: yellow;
+    text-shadow: 0 0 5px black;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+footer .social li a:hover {
+    color: yellow;
+    text-shadow: 0 0 7px black;
+    transform: translateY(-3px);
+}
+
+footer p {
+    color: #000;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width:710px){
+    .nav-menu.responsive{
+        top: 99px;
+        right: 0;
+        transition: .3s ease-in-out;
+
+    }
+    .nav-menu{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 90vh;
+        transition: .3s ease-in-out;
+        top: 99px;
+        right: -999px;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.1));
+        backdrop-filter: blur(20px);
+        overflow: hidden;
+    }
+    .nav-menu ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu-btn{
+        display: block;
+    }
+    .login-menu-btn{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        right: 30px;
+        position: absolute;
+    }
+    
+    header{
+        display: flex;
+        justify-content: left;
+        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0,0,0,0.75));
+
+    }
+    .nav-logo{
+        margin-left: 40px;
+
+    }
+}
